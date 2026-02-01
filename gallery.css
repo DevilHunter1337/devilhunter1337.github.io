@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+header {
+  padding: 1rem;
+  text-align: center;
+}
+
+header a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+figure {
+  margin: 0;
+  background: #020617;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}

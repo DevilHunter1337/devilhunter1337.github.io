@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2>Gallery</h2>
+
+<div class="tabs">
+  <button onclick="showTab('images')" class="active">Images</button>
+  <button onclick="showTab('videos')">Videos</button>
+</div>
+
+<!-- IMAGES -->
+<div id="images" class="gallery active">
+  <img src="https://picsum.photos/id/1015/600/400" loading="lazy" onclick="openLightbox(this.src)">
+  <img src="https://picsum.photos/id/1025/600/400" loading="lazy" onclick="openLightbox(this.src)">
+</div>
+
+<!-- VIDEOS -->
+<div id="videos" class="gallery">
+  <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls loading="lazy"></video>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script src="js/gallery.js"></script>
+</body>
+</html>

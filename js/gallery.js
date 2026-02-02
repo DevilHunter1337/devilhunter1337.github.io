@@ -14,3 +14,11 @@ function openLightbox(src) {
 function closeLightbox() {
   document.getElementById('lightbox').style.display = 'none';
 }
+
+function loadYT(el, id) {
+  el.outerHTML = `
+    <div class="video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1"
+        allowfullscreen></iframe>
+    </div>`;
+}

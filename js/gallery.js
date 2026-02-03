@@ -1,4 +1,4 @@
-function showTab(tab) {
+.function showTab(tab) {
   document.querySelectorAll('.gallery').forEach(g => g.classList.remove('active'));
   document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('active'));
 
@@ -53,11 +53,18 @@ function buildMedia(el) {
   const wrap = document.createElement('div');
   wrap.className = 'media';
 
-  if (type === 'youtube') {
-    wrap.innerHTML = `
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/${src}?autoplay=1"
-        allowfullscreen></iframe>`;
+if (type === 'youtube') {
+  wrap.innerHTML = `
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/${src}
+           ?autoplay=1
+           &playsinline=1
+           &rel=0
+           &modestbranding=1"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen>
+    </iframe>`;
+}
   } else {
     wrap.innerHTML = `
       <video controls autoplay playsinline>

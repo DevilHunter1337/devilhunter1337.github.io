@@ -102,13 +102,15 @@ lightbox.addEventListener('click', e => {
   if (e.target === lightbox) closeLightbox();
 });
 
-function openImageLightbox(src) {
-  const box = document.getElementById('imageLightbox');
-  const img = document.getElementById('imageLightboxImg');
-  img.src = src;
-  box.style.display = 'flex';
+function openVideoLightbox(index) {
+  currentIndex = index;
+  inner.innerHTML = '';
+  mediaItems.forEach(m => inner.appendChild(buildMedia(m)));
+  lightbox.classList.add('active');
+  updatePosition();
 }
 
-function closeImageLightbox() {
-  document.getElementById('imageLightbox').style.display = 'none';
+function closeVideoLightbox() {
+  lightbox.classList.remove('active');
+  inner.innerHTML = '';
 }

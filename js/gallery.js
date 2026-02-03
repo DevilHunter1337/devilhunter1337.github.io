@@ -79,7 +79,6 @@ if (type === 'youtube') {
       <video controls autoplay playsinline>
         <source src="${src}" type="video/mp4">
       </video>`;
-  }
   return wrap;
 }
 

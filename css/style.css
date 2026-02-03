@@ -137,3 +137,18 @@ body {
   max-height: 100%;
   border: none;
 }
+
+#imageLightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+}
+
+#imageLightbox img {
+  max-width: 95%;
+  max-height: 95%;
+}

@@ -40,7 +40,9 @@ let currentIndex = 0;
 let startX = 0;
 
 mediaItems.forEach((item, i) => {
-  item.addEventListener('click', () => openLightbox(i));
+  item.addEventListener('click', e => {
+  e.stopPropagation();
+  openVideoLightbox(i);
 });
 
 function openLightbox(index) {

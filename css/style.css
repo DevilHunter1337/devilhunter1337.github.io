@@ -129,12 +129,9 @@ body {
 }
 
 /* ACTUAL video surface */
-.lightbox-inner iframe,
-.lightbox-inner video {
+.lightbox-inner iframe {
   width: 100vw;
   height: 100vh;
-  max-width: 100%;
-  max-height: 100%;
   border: none;
 }
 

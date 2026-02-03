@@ -20,10 +20,6 @@ function closeImageLightbox() {
   document.getElementById('imageLightbox').style.display = 'none';
 }
 
-function closeLightbox() {
-  document.getElementById('lightbox').style.display = 'none';
-}
-
 function loadYT(el, id) {
   el.outerHTML = `
     <div class="video-wrap">
@@ -32,8 +28,6 @@ function loadYT(el, id) {
     </div>`;
 }
 
-const mediaItems = [...document.querySelectorAll('#videos .media')];
-const lightbox = document.getElementById('videoLightbox');
 document.addEventListener('DOMContentLoaded', () => {
   const mediaItems = [...document.querySelectorAll('#videos .media')];
   const lightbox = document.getElementById('videoLightbox');

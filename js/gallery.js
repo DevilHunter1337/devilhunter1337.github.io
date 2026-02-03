@@ -39,8 +39,8 @@ const inner = lightbox.querySelector('.lightbox-inner');
 let currentIndex = 0;
 let startX = 0;
 
-mediaItems.forEach((item, i) => {
-  item.addEventListener('click', e => {
+mediaItems.forEach((item, i) => {}:
+  item.addEventListener('click', e => {}:
   e.stopPropagation();
   openVideoLightbox(i);
 });
@@ -75,7 +75,6 @@ if (type === 'youtube') {
       allow="autoplay; fullscreen; picture-in-picture"
       allowfullscreen>
     </iframe>`;
-}
   } else {
     wrap.innerHTML = `
       <video controls autoplay playsinline>
@@ -101,14 +100,6 @@ lightbox.addEventListener('touchend', e => {
 lightbox.addEventListener('click', e => {
   if (e.target === lightbox) closeLightbox();
 });
-
-function openVideoLightbox(index) {
-  currentIndex = index;
-  inner.innerHTML = '';
-  mediaItems.forEach(m => inner.appendChild(buildMedia(m)));
-  lightbox.classList.add('active');
-  updatePosition();
-}
 
 function closeVideoLightbox() {
   lightbox.classList.remove('active');

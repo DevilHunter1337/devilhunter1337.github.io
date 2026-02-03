@@ -15,10 +15,21 @@
   <button onclick="showTab('videos')">Videos</button>
 </div>
 
-<!-- IMAGES -->
+<!-- IMAGES TAB -->
 <div id="images" class="gallery active">
-  <img src="https://picsum.photos/id/1015/600/400" loading="lazy" onclick="openLightbox(this.src)">
-  <img src="https://picsum.photos/id/1025/600/400" loading="lazy" onclick="openLightbox(this.src)">
+
+  <img
+    src="https://picsum.photos/id/1015/600/400"
+    loading="lazy"
+    alt="Image 1"
+    onclick="openImageLightbox(this.src)">
+
+  <img
+    src="https://picsum.photos/id/1025/600/400"
+    loading="lazy"
+    alt="Image 2"
+    onclick="openImageLightbox(this.src)">
+
 </div>
 
 <!-- VIDEOS -->
@@ -47,9 +58,9 @@
   
 </div>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img">
+<!-- IMAGE LIGHTBOX -->
+<div id="imageLightbox" onclick="closeImageLightbox()">
+  <img id="imageLightboxImg">
 </div>
 
 <script src="js/gallery.js"></script>

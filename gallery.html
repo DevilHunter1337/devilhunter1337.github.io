@@ -24,7 +24,7 @@
 <!-- VIDEOS -->
 <div id="videos" class="gallery">
 
-  <div class="media">
+  <div class="media" data-type="youtube" data-src="E4c_vIwanEA">
     <iframe
       src="https://www.youtube-nocookie.com/embed/E4c_vIwanEA"
       loading="lazy"
@@ -32,12 +32,18 @@
     </iframe>
   </div>
 
-  <!-- MP4 -->
-  <div class="media">
-    <video controls preload="none">
-      <source src="media/InfamousQuotefromAffliction.mp4" type="video/mp4">
+  <div class="media" data-type="mp4" data-src="sample.mp4">
+    <video preload="none">
+      <source src="Media/InfamousQuotefromAffliction.mp4" type="video/mp4">
     </video>
   </div>
+
+</div>
+
+<!-- VIDEO LIGHTBOX -->
+<div id="videoLightbox">
+  <div class="lightbox-inner"></div>
+</div>
   
 </div>
 

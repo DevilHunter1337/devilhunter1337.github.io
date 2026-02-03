@@ -84,3 +84,14 @@ lightbox.addEventListener('touchend', e => {
 lightbox.addEventListener('click', e => {
   if (e.target === lightbox) closeLightbox();
 });
+
+function openImageLightbox(src) {
+  const box = document.getElementById('imageLightbox');
+  const img = document.getElementById('imageLightboxImg');
+  img.src = src;
+  box.style.display = 'flex';
+}
+
+function closeImageLightbox() {
+  document.getElementById('imageLightbox').style.display = 'none';
+}

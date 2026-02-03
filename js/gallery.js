@@ -10,9 +10,14 @@ function showTab(e, tab) {
   e.target.classList.add('active');
 }
 
-function openLightbox(src) {
-  document.getElementById('lightbox').style.display = 'flex';
-  document.getElementById('lightbox-img').src = src;
+function openImageLightbox(src) {
+  const box = document.getElementById('imageLightbox');
+  document.getElementById('imageLightboxImg').src = src;
+  box.style.display = 'flex';
+}
+
+function closeImageLightbox() {
+  document.getElementById('imageLightbox').style.display = 'none';
 }
 
 function closeLightbox() {

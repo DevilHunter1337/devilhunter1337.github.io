@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<h1>📸 My Image & Video Gallery</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('images')">Images</button>
+  <button class="tab-btn" onclick="showTab('videos')">Videos</button>
+</div>
+
+<!-- Image Gallery -->
+<div id="images" class="tab-content active">
+  <div class="gallery">
+
+    <img src="media/photo1.jpg" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="media/photo2.jpg" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="media/photo3.jpg" loading="lazy" onclick="openLightbox(this.src)">
+
+  </div>
+</div>
+
+<!-- Video Gallery -->
+<div id="videos" class="tab-content">
+  <div class="gallery">
+
+    <!-- MP4 Video -->
+    <video controls loading="lazy">
+      <source src="media/video1.mp4" type="video/mp4">
+    </video>
+
+    <!-- YouTube Embed -->
+    <iframe
+      src="https://www.youtube.com/embed/tgbNymZ7vqY"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

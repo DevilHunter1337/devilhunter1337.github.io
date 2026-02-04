@@ -28,21 +28,15 @@ function loadYT(el, id) {
     </div>`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const mediaItems = [...document.querySelectorAll('#videos .media')];
-  const lightbox = document.getElementById('videoLightbox');
-  if (!mediaItems.length || !lightbox) return;
-
-  const inner = lightbox.querySelector('.lightbox-inner');
-  let currentIndex = 0;
-  let startX = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const mediaItems = document.querySelectorAll("#videos .media");
 
   mediaItems.forEach((item, i) => {
-    item.addEventListener('click', e => {
-      e.stopPropagation();
+    item.addEventListener("click", () => {
       openVideoLightbox(i);
     });
   });
+});
 
   function openVideoLightbox(index) {
     currentIndex = index;

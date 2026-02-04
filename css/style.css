@@ -149,3 +149,7 @@ body {
   max-width: 95%;
   max-height: 95%;
 }
+
+.media video {
+  pointer-events: none;
+}

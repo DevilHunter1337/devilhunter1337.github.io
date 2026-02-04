@@ -1,71 +1,71 @@
 function showTab(e, tab) {
-  document.querySelectorAll('.gallery').forEach(g =>
-    g.classList.remove('active')
-  );
-  document.querySelectorAll('.tabs button').forEach(b =>
-    b.classList.remove('active')
+  document.querySelectorAll(".gallery").forEach(g =>
+    g.classList.remove("active")
   );
 
-  document.getElementById(tab).classList.add('active');
-  e.target.classList.add('active');
+  document.querySelectorAll(".tabs button").forEach(b =>
+    b.classList.remove("active")
+  );
+
+  document.getElementById(tab).classList.add("active");
+  e.target.classList.add("active");
 }
 
+/* IMAGE LIGHTBOX */
 function openImageLightbox(src) {
-  const box = document.getElementById('imageLightbox');
-  document.getElementById('imageLightboxImg').src = src;
-  box.style.display = 'flex';
+  const box = document.getElementById("imageLightbox");
+  document.getElementById("imageLightboxImg").src = src;
+  box.style.display = "flex";
 }
 
 function closeImageLightbox() {
-  document.getElementById('imageLightbox').style.display = 'none';
+  document.getElementById("imageLightbox").style.display = "none";
 }
 
-function loadYT(el, id) {
-  el.outerHTML = `
-    <div class="video-wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1"
-        allowfullscreen></iframe>
-    </div>`;
-}
-
+/* VIDEO LIGHTBOX */
 document.addEventListener("DOMContentLoaded", () => {
-  const mediaItems = document.querySelectorAll("#videos .media");
 
+  const mediaItems = [...document.querySelectorAll("#videos .media")];
+  const lightbox = document.getElementById("videoLightbox");
+  const inner = lightbox.querySelector(".lightbox-inner");
+
+  let currentIndex = 0;
+  let startX = 0;
+
+  /* CLICK VIDEO THUMBNAILS */
   mediaItems.forEach((item, i) => {
     item.addEventListener("click", () => {
       openVideoLightbox(i);
     });
   });
-});
 
   function openVideoLightbox(index) {
     currentIndex = index;
-    inner.innerHTML = '';
+    inner.innerHTML = "";
+
     mediaItems.forEach(m => inner.appendChild(buildMedia(m)));
-    lightbox.classList.add('active');
+
+    lightbox.classList.add("active");
     updatePosition();
   }
 
   function closeVideoLightbox() {
-    lightbox.classList.remove('active');
-    inner.innerHTML = '';
+    lightbox.classList.remove("active");
+    inner.innerHTML = "";
   }
 
   function buildMedia(el) {
     const type = el.dataset.type;
     const src = el.dataset.src;
-    const wrap = document.createElement('div');
-    wrap.className = 'media';
 
-    if (type === 'youtube') {
+    const wrap = document.createElement("div");
+    wrap.className = "media";
+
+    if (type === "youtube") {
       wrap.innerHTML = `
         <iframe
-          src="https://www.youtube-nocookie.com/embed/${src}
-               ?autoplay=1
-               &playsinline=1
-               &rel=0
-               &modestbranding=1"
-          allow="autoplay; fullscreen; picture-in-picture"
+          src="https://www.youtube-nocookie.com/embed/${src}?autoplay=1&playsinline=1&rel=0"
+          allow="autoplay; fullscreen"
           allowfullscreen>
         </iframe>`;
     } else {
@@ -79,21 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updatePosition() {
-    inner.style.transform = \`translateX(-\${currentIndex * 100}%)\`;
+    inner.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
-  lightbox.addEventListener('touchstart', e =>
-    startX = e.touches[0].clientX
-  );
+  /* SWIPE SUPPORT */
+  lightbox.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
 
-  lightbox.addEventListener('touchend', e => {
+  lightbox.addEventListener("touchend", e => {
     const dx = e.changedTouches[0].clientX - startX;
+
     if (dx > 60 && currentIndex > 0) currentIndex--;
     if (dx < -60 && currentIndex < mediaItems.length - 1) currentIndex++;
+
     updatePosition();
   });
 
-  lightbox.addEventListener('click', e => {
+  /* TAP OUTSIDE CLOSE */
+  lightbox.addEventListener("click", e => {
     if (e.target === lightbox) closeVideoLightbox();
   });
+
 });

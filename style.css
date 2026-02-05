@@ -52,12 +52,13 @@ h1 {
   padding: 20px;
 }
 
-.gallery img,
-.gallery video {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 12px;
+.gallery img {
   cursor: pointer;
+}
+
+.gallery video,
+.gallery iframe {
+  cursor: default;
 }
 
 video {

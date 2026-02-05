@@ -1,3 +1,7 @@
+/* =========================
+   Global Page Styling
+========================= */
+
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -8,6 +12,10 @@ body {
 h1 {
   margin: 20px;
 }
+
+/* =========================
+   Tabs Styling
+========================= */
 
 .tabs {
   margin-bottom: 20px;
@@ -20,12 +28,17 @@ h1 {
   background: #ddd;
   margin: 5px;
   border-radius: 8px;
+  font-size: 16px;
 }
 
 .tab-btn.active {
   background: #333;
   color: white;
 }
+
+/* =========================
+   Tab Content Control
+========================= */
 
 .tab-content {
   display: none;
@@ -35,7 +48,10 @@ h1 {
   display: block;
 }
 
-/* Image Gallery Grid */
+/* =========================
+   Image Gallery Layout
+========================= */
+
 #images .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -43,7 +59,21 @@ h1 {
   padding: 20px;
 }
 
-/* Video Gallery Vertical Layout */
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   Video Gallery Layout
+========================= */
+
 #videos .gallery {
   display: flex;
   flex-direction: column;
@@ -52,25 +82,28 @@ h1 {
   padding: 20px;
 }
 
-.gallery img {
-  cursor: pointer;
+/* MP4 Video Styling */
+
+.gallery video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
 }
 
-.gallery video,
-.gallery iframe {
+/* Remove pointer cursor for videos */
+.gallery video {
   cursor: default;
 }
 
-video {
-  max-height: 400px;
-}
+/* =========================
+   Responsive Embedded Videos
+========================= */
 
-/* Responsive Embedded Videos */
 .responsive-video {
   position: relative;
   width: 100%;
   max-width: 800px;
-  padding-top: 56.25%;
+  padding-top: 56.25%; /* 16:9 ratio */
   border-radius: 12px;
   overflow: hidden;
 }
@@ -81,20 +114,24 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: none;
 }
 
-/* Lightbox */
+/* =========================
+   Lightbox Styling
+========================= */
+
 #lightbox {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 #lightbox img {

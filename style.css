@@ -77,3 +77,26 @@ iframe {
   max-height: 90%;
   border-radius: 12px;
 }
+
+.video-item {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.responsive-video {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 ratio */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

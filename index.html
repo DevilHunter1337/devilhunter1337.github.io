@@ -31,27 +31,26 @@
 <div id="videos" class="tab-content">
   <div class="gallery">
 
-<!-- External MP4 Video 1 -->
+    <!-- External MP4 Video -->
     <video controls loading="lazy">
       <source src="https://devilhunter.rfc1337.net/Videos/GTA5/InfamousQuotefromAffliction.mp4" type="video/mp4">
     </video>
-    
-    <!-- MP4 Video -->
+
+    <!-- Local MP4 Video -->
     <video controls loading="lazy">
       <source src="media/Shadow Warrior_2021.11.28-03.33.mp4" type="video/mp4">
     </video>
 
     <!-- YouTube Embed -->
-    <iframe
-      src="https://www.youtube.com/embed/E4c_vIwanEA"
-      allowfullscreen>
-    </iframe>
+    <div class="responsive-video">
+      <iframe
+        src="https://www.youtube.com/embed/E4c_vIwanEA"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
 
-   <div id="videos" class="tab-content">
-
-  <h3>Videos</h3>
-
-  <div class="video-item">
+    <!-- ScreenPal Embed -->
     <div class="responsive-video">
       <iframe
         src="https://go.screenpal.com/player/cOnhnln3ddH?embed=1"
@@ -59,9 +58,9 @@
         loading="lazy">
       </iframe>
     </div>
-  </div>
 
-   </div>
+  </div>
+</div>
 
 <!-- Lightbox -->
 <div id="lightbox" onclick="closeLightbox()">
